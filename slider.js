@@ -1,5 +1,3 @@
-
-
 const track = document.querySelector('.slider__track');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.slider__button--right');
@@ -73,6 +71,39 @@ dotsNav.addEventListener('click', e => {
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, prevButton, nextButton, targetIndex);
 });
+
+
+// template
+
+const contentArray = [
+    {
+        id: 1,
+        title: 'Jarek',
+        description: 'Test One'
+    },
+    {
+        id: 2,
+        title: 'Janek',
+        description: 'Test Two'
+    },
+    {
+        id: 1,
+        title: 'Paweł',
+        description: 'Test Three'
+    }
+];
+
+const generateTemplate = (contentObj) => {
+    const {id, title, description} = contentObj;
+    const html = `
+    <li class="slider__slide">
+        <p>${id}</p>
+        <p>${title}</p>
+        <p>${description}</p>
+    </li>
+    `;
+    track.innerHTML += html;
+};
 
 
 
